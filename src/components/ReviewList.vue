@@ -31,7 +31,7 @@ defineProps({
         :index="index"
         :toggle-like="toggleLike"
         :remove-review="removeReview"
-        v-bind="review"
+        :review="review"
       />
     </li>
 

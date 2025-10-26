@@ -1,8 +1,7 @@
 <script setup>
 defineProps({
   index: Number,
-  rating: Number,
-  liked: Boolean,
+  review: Object,
   toggleLike: Function,
   removeReview: Function,
 })
@@ -11,12 +10,12 @@ defineProps({
 <template>
   <div class="review__rating">
     <span v-for="n in 5" :key="`star-${n}`" class="star">
-      {{ n <= rating ? '★' : '☆' }}
+      {{ n <= review.rating ? '★' : '☆' }}
     </span>
   </div>
   <div class="review__actions">
     <button @click="toggleLike(review)" class="btn btn--like">
-      {{ liked ? '❤️' : '🤍' }}
+      {{ review.liked ? '❤️' : '🤍' }}
     </button>
     <button @click="removeReview(index)" class="btn btn--delete">Удалить</button>
   </div>
